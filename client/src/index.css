@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-dyslexic: 'Open Dyslexic', var(--font-sans);
+  --layout-density: 0.75rem;
+  --layout-comfortable: 1rem;
+  --layout-relaxed: 1.5rem;
+  --content-gap: 1rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.font-dyslexic {
+  font-family: var(--font-dyslexic);
+}
+
+body.density-dense {
+  --content-gap: 0.75rem;
+}
+
+body.density-relaxed {
+  --content-gap: 1.5rem;
+}
+
+/* Bionic reading: bold first part of words */
+.bionic-word .bionic-bold {
+  font-weight: 700;
+}
