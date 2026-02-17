@@ -68,7 +68,7 @@ export async function simplifyToBionic(text, options = {}) {
       const rest = token.slice(boldCount);
       return { bold, rest };
     })
-    .map((part) => (part.bold !== undefined ? `${part.bold}${part.rest}` : part))
+    .map((part) => (typeof part === 'object' ? `${part.bold}${part.rest}` : part))
     .join('');
 
   return {
